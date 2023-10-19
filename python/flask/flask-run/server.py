@@ -12,5 +12,10 @@ def hello():
     return jsonify({'message': 'hello, world!'})
 
 
+@app.route('/error')
+def error():
+    raise Exception('An unexpected error has occurred')
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
